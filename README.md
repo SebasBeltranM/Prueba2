@@ -1,2 +1,2 @@
-# Prueba2
-Estoy comprobando el video del profesor
+# crearProyectoMaven
+Actividad de biblioteca para seguimiento
