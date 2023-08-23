@@ -1,6 +1,7 @@
 package co.edu.uniquindio.biblioteca.model;
 
 public class Libro {
+
     //Atributos
         public String title;
         public String gender;
@@ -29,7 +30,6 @@ public class Libro {
             return this.pageNumber;
         }
 
-
     //Métodos para editar información
         public void setTitle(String title) {
             this.title = title;
@@ -49,4 +49,4 @@ public class Libro {
         public void setPageNumber(Integer pageNumber) {
             this.pageNumber = pageNumber;
         }
-    }
+ }
