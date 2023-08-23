@@ -1,5 +1,5 @@
 package co.edu.uniquindio.biblioteca;
-
+import co.edu.uniquindio.biblioteca.model.Libro;
 public class Main {
     public static void main(String[] args) {
         Libro book001= new Libro();
