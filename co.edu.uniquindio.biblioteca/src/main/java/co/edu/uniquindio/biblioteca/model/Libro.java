@@ -1,6 +1,7 @@
 package co.edu.uniquindio.biblioteca.model;
 
-    public class Libro {
+public class Libro {
+
     //Atributos
         public String title;
         public String gender;
@@ -9,7 +10,7 @@ package co.edu.uniquindio.biblioteca.model;
         public String editorial;
         public Integer pageNumber;
 
-    //Métodos
+    //Métodos para obtener información
         public String getTitle(){
             return this.title;
         }
@@ -29,5 +30,23 @@ package co.edu.uniquindio.biblioteca.model;
             return this.pageNumber;
         }
 
-
-}
+    //Métodos para editar información
+        public void setTitle(String title) {
+            this.title = title;
+        }
+        public void setGender(String gender) {
+            this.gender = gender;
+        }
+        public void setAuthor(String author) {
+            this.author = author;
+        }
+        public void setPublicationYear(Integer publicationYear) {
+            this.publicationYear = publicationYear;
+        }
+        public void setEditorial(String editorial) {
+            this.editorial = editorial;
+        }
+        public void setPageNumber(Integer pageNumber) {
+            this.pageNumber = pageNumber;
+        }
+ }
