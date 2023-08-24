@@ -63,11 +63,11 @@ public class Main {
         int cantFirstVocal = 0;
         int cantFirstCons = 0;
 
-        char firstLetterBook1 = book001.title.charAt(0);
-        char firstLetterBook2 = book002.title.charAt(0);
-        char firstLetterBook3 = book003.title.charAt(0);
-        char firstLetterBook4 = book004.title.charAt(0);
-        char firstLetterBook5 = book005.title.charAt(0);
+        char firstLetterBook1 = book001.getTitle().charAt(0);
+        char firstLetterBook2 = book002.getTitle().charAt(0);
+        char firstLetterBook3 = book003.getTitle().charAt(0);
+        char firstLetterBook4 = book004.getTitle().charAt(0);
+        char firstLetterBook5 = book005.getTitle().charAt(0);
 
         if (firstLetterBook1 == 'a' || firstLetterBook1 == 'A' || firstLetterBook1 == 'e' || firstLetterBook1 == 'E' || firstLetterBook1 == 'i' || firstLetterBook1 == 'I' || firstLetterBook1 == 'o' || firstLetterBook1 == 'O' || firstLetterBook1 == 'u'|| firstLetterBook1 == 'U') {
             cantFirstVocal = cantFirstVocal + 1;
@@ -102,25 +102,25 @@ public class Main {
         // Modificar la información del libro “Cálculo integral” y ponerle “Cálculo integral y diferencial”, informar en cual(es)
         // libros hubo modificación.
 
-        if (book001.title.equalsIgnoreCase("Cálculo integral")){
+        if (book001.getTitle().equalsIgnoreCase("Cálculo integral")){
             book001.setTitle("Cálculo integral y diferencial");
-            System.out.println("Se modificó el título del libro con código 001, el nuevo título es: " + book001.title);
+            System.out.println("Se modificó el título del libro con código 001, el nuevo título es: " + book001.getTitle());
         }
-        if (book002.title.equalsIgnoreCase("Cálculo integral")){
+        if (book002.getTitle().equalsIgnoreCase("Cálculo integral")){
             book002.setTitle("Cálculo integral y diferencial");
-            System.out.println("Se modificó el título del libro con código 002, el nuevo título es: " + book002.title);
+            System.out.println("Se modificó el título del libro con código 002, el nuevo título es: " + book002.getTitle());
         }
-        if (book003.title.equalsIgnoreCase("Cálculo integral")){
+        if (book003.getTitle().equalsIgnoreCase("Cálculo integral")){
             book003.setTitle("Cálculo integral y diferencial");
-            System.out.println("Se modificó el título del libro con código 003, el nuevo título es: " + book003.title);
+            System.out.println("Se modificó el título del libro con código 003, el nuevo título es: " + book003.getTitle());
         }
-        if (book004.title.equalsIgnoreCase("Cálculo integral")){
+        if (book004.getTitle().equalsIgnoreCase("Cálculo integral")){
             book004.setTitle("Cálculo integral y diferencial");
-            System.out.println("Se modificó el título del libro con código 004, el nuevo título es: " + book004.title);
+            System.out.println("Se modificó el título del libro con código 004, el nuevo título es: " + book004.getTitle());
         }
-        if (book005.title.equalsIgnoreCase("Cálculo integral")){
+        if (book005.getTitle().equalsIgnoreCase("Cálculo integral")){
             book005.setTitle("Cálculo integral y diferencial");
-            System.out.println("Se modificó el título del libro con código 005, el nuevo título es: " + book005.title);
+            System.out.println("Se modificó el título del libro con código 005, el nuevo título es: " + book005.getTitle());
         }
 
     }
@@ -131,25 +131,25 @@ public class Main {
         int highestPage = 0;
         String bookHighestPage = "";
 
-        if (highestPage<book001.pageNumber) {
-            highestPage = book001.pageNumber;
-            bookHighestPage = book001.title;
+        if (highestPage<book001.getPageNumber()) {
+            highestPage = book001.getPageNumber();
+            bookHighestPage = book001.getTitle();
         }
-        if (highestPage<book002.pageNumber) {
-            highestPage = book002.pageNumber;
-            bookHighestPage = book002.title;
+        if (highestPage<book002.getPageNumber()) {
+            highestPage = book002.getPageNumber();
+            bookHighestPage = book002.getTitle();
         }
-        if (highestPage<book003.pageNumber) {
-            highestPage = book003.pageNumber;
-            bookHighestPage = book003.title;
+        if (highestPage<book003.getPageNumber()) {
+            highestPage = book003.getPageNumber();
+            bookHighestPage = book003.getTitle();
         }
-        if (highestPage<book004.pageNumber) {
-            highestPage = book004.pageNumber;
-            bookHighestPage = book004.title;
+        if (highestPage<book004.getPageNumber()) {
+            highestPage = book004.getPageNumber();
+            bookHighestPage = book004.getTitle();
         }
-        if (highestPage<book005.pageNumber) {
-            highestPage = book005.pageNumber;
-            bookHighestPage = book005.title;
+        if (highestPage<book005.getPageNumber()) {
+            highestPage = book005.getPageNumber();
+            bookHighestPage = book005.getTitle();
         }
 
         System.out.println("El libro con mayor cantidad de páginas es " + bookHighestPage + " con " + highestPage + " páginas.");
@@ -159,19 +159,19 @@ public class Main {
 
         int cantidadNovelas = 0;
 
-        if (book001.gender.equalsIgnoreCase("novela")) {
+        if (book001.getGender().equalsIgnoreCase("novela")) {
             cantidadNovelas = cantidadNovelas + 1;
         }
-        if (book002.gender.equalsIgnoreCase("novela")) {
+        if (book002.getGender().equalsIgnoreCase("novela")) {
             cantidadNovelas = cantidadNovelas + 1;
         }
-        if (book003.gender.equalsIgnoreCase("novela")) {
+        if (book003.getGender().equalsIgnoreCase("novela")) {
             cantidadNovelas = cantidadNovelas + 1;
         }
-        if (book004.gender.equalsIgnoreCase("novela")) {
+        if (book004.getGender().equalsIgnoreCase("novela")) {
             cantidadNovelas = cantidadNovelas + 1;
         }
-        if (book005.gender.equalsIgnoreCase("novela")) {
+        if (book005.getGender().equalsIgnoreCase("novela")) {
             cantidadNovelas = cantidadNovelas + 1;
         }
         String generoNovela = "Hay " + cantidadNovelas + " libros del género novela";
