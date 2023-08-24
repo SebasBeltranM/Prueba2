@@ -38,13 +38,17 @@ public class Main {
             book005.setEditorial("Editorial Sur");
             book005.setPageNumber(150);
 
-        String librito = clasificarLibrosInicial( book001, book002, book003, book004, book005);
+        String textoLetraInicial = clasificarLetraInicial( book001, book002, book003, book004, book005);
+
+        imprimirInformacion( textoLetraInicial );
 
         modificarTitulo( book001, book002, book003, book004, book005);
 
         buscarLibroMasPaginas( book001, book002, book003, book004, book005);
 
-        imprimirInformacion( librito );
+        String textoGeneroNovelas = buscarNovelas( book001, book002, book003, book004, book005);
+
+        imprimirInformacion( textoGeneroNovelas );
 
     }
 
@@ -52,66 +56,9 @@ public class Main {
         System.out.println(mensaje);
     }
 
-    private static void buscarLibroMasPaginas(Libro book001, Libro book002, Libro book003, Libro book004, Libro book005) {
-        //Funcionalidad nueva: Libro con mayor cantidad de páginas.
+    private static String clasificarLetraInicial(Libro book001, Libro book002, Libro book003, Libro book004, Libro book005) {
 
-        int highestPage = 0;
-        String bookHighestPage = "";
-
-        if (highestPage<book001.pageNumber) {
-            highestPage = book001.pageNumber;
-            bookHighestPage = book001.title;
-        }
-        if (highestPage<book002.pageNumber) {
-            highestPage = book002.pageNumber;
-            bookHighestPage = book002.title;
-        }
-        if (highestPage<book003.pageNumber) {
-            highestPage = book003.pageNumber;
-            bookHighestPage = book003.title;
-        }
-        if (highestPage<book004.pageNumber) {
-            highestPage = book004.pageNumber;
-            bookHighestPage = book004.title;
-        }
-        if (highestPage<book005.pageNumber) {
-            highestPage = book005.pageNumber;
-            bookHighestPage = book005.title;
-        }
-
-        System.out.println("El libro con mayor cantidad de páginas es " + bookHighestPage + " con " + highestPage + " páginas.");
-
-    }
-
-    private static void modificarTitulo(Libro book001, Libro book002, Libro book003, Libro book004, Libro book005) {
-        // Modificar la información del libro “Cálculo integral” y ponerle “Cálculo integral y diferencial”
-
-        if (book001.title.equalsIgnoreCase("Cálculo integral")){
-            book001.setTitle("Cálculo integral y diferencial");
-            System.out.println("Se modificó el título del libro con código 001, el nuevo título es: " + book001.title);
-        }
-        if (book002.title.equalsIgnoreCase("Cálculo integral")){
-            book002.setTitle("Cálculo integral y diferencial");
-            System.out.println("Se modificó el título del libro con código 002, el nuevo título es: " + book002.title);
-        }
-        if (book003.title.equalsIgnoreCase("Cálculo integral")){
-            book003.setTitle("Cálculo integral y diferencial");
-            System.out.println("Se modificó el título del libro con código 003, el nuevo título es: " + book003.title);
-        }
-        if (book004.title.equalsIgnoreCase("Cálculo integral")){
-            book004.setTitle("Cálculo integral y diferencial");
-            System.out.println("Se modificó el título del libro con código 004, el nuevo título es: " + book004.title);
-        }
-        if (book005.title.equalsIgnoreCase("Cálculo integral")){
-            book005.setTitle("Cálculo integral y diferencial");
-            System.out.println("Se modificó el título del libro con código 005, el nuevo título es: " + book005.title);
-        }
-
-    }
-
-    private static String clasificarLibrosInicial(Libro book001, Libro book002, Libro book003, Libro book004, Libro book005) {
-
-        //Obtener la cantidad de libros donde el título empiece por una vocal o consonante.
+        //Contar los libros según la letra inicial en vocal o consonante.
 
         int cantFirstVocal = 0;
         int cantFirstCons = 0;
@@ -147,8 +94,88 @@ public class Main {
         } else {
             cantFirstCons = cantFirstCons + 1;
         }
-        String texto = "Hay " + cantFirstVocal + " libros que comienzan con vocal y " + cantFirstCons + " libros que comienzan con consonantes.";
-        return texto;
+        String letraInicial = "Hay " + cantFirstVocal + " libros que comienzan con vocal y " + cantFirstCons + " libros que comienzan con consonantes.";
+        return letraInicial;
+    }
+
+    private static void modificarTitulo(Libro book001, Libro book002, Libro book003, Libro book004, Libro book005) {
+        // Modificar la información del libro “Cálculo integral” y ponerle “Cálculo integral y diferencial”, informar en cual(es)
+        // libros hubo modificación.
+
+        if (book001.title.equalsIgnoreCase("Cálculo integral")){
+            book001.setTitle("Cálculo integral y diferencial");
+            System.out.println("Se modificó el título del libro con código 001, el nuevo título es: " + book001.title);
+        }
+        if (book002.title.equalsIgnoreCase("Cálculo integral")){
+            book002.setTitle("Cálculo integral y diferencial");
+            System.out.println("Se modificó el título del libro con código 002, el nuevo título es: " + book002.title);
+        }
+        if (book003.title.equalsIgnoreCase("Cálculo integral")){
+            book003.setTitle("Cálculo integral y diferencial");
+            System.out.println("Se modificó el título del libro con código 003, el nuevo título es: " + book003.title);
+        }
+        if (book004.title.equalsIgnoreCase("Cálculo integral")){
+            book004.setTitle("Cálculo integral y diferencial");
+            System.out.println("Se modificó el título del libro con código 004, el nuevo título es: " + book004.title);
+        }
+        if (book005.title.equalsIgnoreCase("Cálculo integral")){
+            book005.setTitle("Cálculo integral y diferencial");
+            System.out.println("Se modificó el título del libro con código 005, el nuevo título es: " + book005.title);
+        }
+
+    }
+
+    private static void buscarLibroMasPaginas(Libro book001, Libro book002, Libro book003, Libro book004, Libro book005) {
+        //Funcionalidad nueva: Libro con mayor cantidad de páginas.
+
+        int highestPage = 0;
+        String bookHighestPage = "";
+
+        if (highestPage<book001.pageNumber) {
+            highestPage = book001.pageNumber;
+            bookHighestPage = book001.title;
+        }
+        if (highestPage<book002.pageNumber) {
+            highestPage = book002.pageNumber;
+            bookHighestPage = book002.title;
+        }
+        if (highestPage<book003.pageNumber) {
+            highestPage = book003.pageNumber;
+            bookHighestPage = book003.title;
+        }
+        if (highestPage<book004.pageNumber) {
+            highestPage = book004.pageNumber;
+            bookHighestPage = book004.title;
+        }
+        if (highestPage<book005.pageNumber) {
+            highestPage = book005.pageNumber;
+            bookHighestPage = book005.title;
+        }
+
+        System.out.println("El libro con mayor cantidad de páginas es " + bookHighestPage + " con " + highestPage + " páginas.");
+
+    }
+    private static String buscarNovelas(Libro book001, Libro book002, Libro book003, Libro book004, Libro book005) {
+
+        int cantidadNovelas = 0;
+
+        if (book001.gender.equalsIgnoreCase("novela")) {
+            cantidadNovelas = cantidadNovelas + 1;
+        }
+        if (book002.gender.equalsIgnoreCase("novela")) {
+            cantidadNovelas = cantidadNovelas + 1;
+        }
+        if (book003.gender.equalsIgnoreCase("novela")) {
+            cantidadNovelas = cantidadNovelas + 1;
+        }
+        if (book004.gender.equalsIgnoreCase("novela")) {
+            cantidadNovelas = cantidadNovelas + 1;
+        }
+        if (book005.gender.equalsIgnoreCase("novela")) {
+            cantidadNovelas = cantidadNovelas + 1;
+        }
+        String generoNovela = "Hay " + cantidadNovelas + " libros del género novela";
+        return generoNovela;
     }
 
 }
