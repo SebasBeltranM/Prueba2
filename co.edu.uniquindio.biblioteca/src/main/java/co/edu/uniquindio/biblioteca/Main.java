@@ -24,12 +24,12 @@ public class Main {
             book003.setEditorial("Fondo de Cultura Económica");
             book003.setPageNumber(150);
         Libro book004= new Libro();
-            book004.setTitle("La casa de los espíritus");
-            book004.setGender("Novela");
-            book004.setAuthor("Isabel Allende");
+            book004.setTitle("Cálculo integral");
+            book004.setGender("Académico");
+            book004.setAuthor("Edwin J. Purcell");
             book004.setPublicationYear(1982);
-            book004.setEditorial("Plaza & Janés");
-            book004.setPageNumber(400);
+            book004.setEditorial("McGraw Hill");
+            book004.setPageNumber(1400);
         Libro book005= new Libro();
             book005.setTitle("Ficciones");
             book005.setGender("Cuentos");
@@ -59,7 +59,6 @@ public class Main {
         } else {
             cantFrirstCons = cantFrirstCons + 1;
         }
-
         if (firstLetterBook3 == 'a' || firstLetterBook3 == 'A' || firstLetterBook3 == 'e' || firstLetterBook3 == 'E' || firstLetterBook3 == 'i' || firstLetterBook3 == 'I' || firstLetterBook3 == 'o' || firstLetterBook3 == 'O' || firstLetterBook3 == 'u'|| firstLetterBook3 == 'U') {
             cantFirstVocal = cantFirstVocal + 1;
         } else {
@@ -75,8 +74,58 @@ public class Main {
         } else {
             cantFrirstCons = cantFrirstCons + 1;
         }
-        System.out.println(cantFirstVocal);
-        System.out.println(cantFrirstCons);
+        System.out.println("Hay " + cantFirstVocal + " libros que comienzan con vocal y " + cantFrirstCons + " libros que comienzan con consonantes.");
+
+        // Modificar la información del libro “Cálculo integral” y ponerle “Cálculo integral y diferencial”
+
+        if (book001.title.equalsIgnoreCase("Cálculo integral")){
+            book001.setTitle("Cálculo integral y diferencial");
+            System.out.println("Se modificó el título del libro con código 001, el nuevo título es: " + book001.title);
+        }
+        if (book002.title.equalsIgnoreCase("Cálculo integral")){
+            book002.setTitle("Cálculo integral y diferencial");
+            System.out.println("Se modificó el título del libro con código 002, el nuevo título es: " + book002.title);
+        }
+        if (book003.title.equalsIgnoreCase("Cálculo integral")){
+            book003.setTitle("Cálculo integral y diferencial");
+            System.out.println("Se modificó el título del libro con código 003, el nuevo título es: " + book003.title);
+        }
+        if (book004.title.equalsIgnoreCase("Cálculo integral")){
+            book004.setTitle("Cálculo integral y diferencial");
+            System.out.println("Se modificó el título del libro con código 004, el nuevo título es: " + book004.title);
+        }
+        if (book005.title.equalsIgnoreCase("Cálculo integral")){
+            book005.setTitle("Cálculo integral y diferencial");
+            System.out.println("Se modificó el título del libro con código 005, el nuevo título es: " + book005.title);
+        }
+
+        //Funcionalidad nueva: Libro con mayor cantidad de páginas.
+
+        int highestPage = 0;
+        String bookHighestPage = "";
+
+        if (highestPage<book001.pageNumber) {
+            highestPage = book001.pageNumber;
+            bookHighestPage = book001.title;
+        }
+        if (highestPage<book002.pageNumber) {
+            highestPage = book002.pageNumber;
+            bookHighestPage = book002.title;
+        }
+        if (highestPage<book003.pageNumber) {
+            highestPage = book003.pageNumber;
+            bookHighestPage = book003.title;
+        }
+        if (highestPage<book004.pageNumber) {
+            highestPage = book004.pageNumber;
+            bookHighestPage = book004.title;
+        }
+        if (highestPage<book005.pageNumber) {
+            highestPage = book005.pageNumber;
+            bookHighestPage = book005.title;
+        }
+
+        System.out.println("El libro con mayor cantidad de páginas es " + bookHighestPage + " con " + highestPage + " páginas.");
     }
 
 }
